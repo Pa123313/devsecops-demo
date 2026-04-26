@@ -1,90 +1,76 @@
-# DevSecOps Pipeline Implementation for Tic Tac Toe Game
+🚀 Tic-Tac-Toe: Enterprise-Grade DevSecOps Pipeline
+A classic Tic-Tac-Toe application reimagined as a showcase for modern cloud-native engineering. This project demonstrates a full CI/CD lifecycle, integrating automated security scanning, container orchestration, and GitOps deployment patterns.
 
-![Screenshot 2025-03-04 at 7 16 48 PM](https://github.com/user-attachments/assets/7ed79f9c-9144-4870-accd-500085a15592)
+🛠️ Tech Stack & DevOps Tooling
+Frontend: React 18, TypeScript, Tailwind CSS.
 
-![image](https://github.com/user-attachments/assets/5b2813a5-f493-4665-8964-77359b5be93a)
+CI/CD: GitHub Actions (Automated Unit Testing, Linting, and Building).
 
-## Features
+Security: Docker Image Scanning (Trivy/Snyk) & SAST.
 
-- 🎮 Fully functional Tic Tac Toe game
-- 📊 Score tracking for X, O, and draws
-- 📜 Game history with timestamps
-- 🏆 Highlights winning combinations
-- 🔄 Reset game and statistics
-- 📱 Responsive design for all devices
+Containerization: Docker & Docker Hub.
 
-## Technologies Used
+Orchestration: Kubernetes (K8s).
 
-- React 18
-- TypeScript
-- Tailwind CSS
-- Lucide React for icons
+GitOps: ArgoCD for continuous delivery and automated synchronization.
 
-## Project Structure
+🏗️ Architecture & Pipeline
 
-```
-src/
-├── components/
-│   ├── Board.tsx       # Game board component
-│   ├── Square.tsx      # Individual square component
-│   ├── ScoreBoard.tsx  # Score tracking component
-│   └── GameHistory.tsx # Game history component
-├── utils/
-│   └── gameLogic.ts    # Game logic utilities
-├── App.tsx             # Main application component
-└── main.tsx           # Entry point
-```
+The project follows a rigorous DevSecOps workflow to ensure code quality and infrastructure stability:
 
-## Game Logic
+Continuous Integration (CI): Every push to main triggers a GitHub Action that runs unit tests and linting to maintain code standards.
 
-The game implements the following rules:
+Security-First Build: The Docker image is built and immediately scanned for vulnerabilities before being pushed to the registry.
 
-1. X goes first, followed by O
-2. The first player to get 3 of their marks in a row (horizontally, vertically, or diagonally) wins
-3. If all 9 squares are filled and no player has 3 marks in a row, the game is a draw
-4. Winning combinations are highlighted
-5. Game statistics are tracked and displayed
+Continuous Deployment (CD): ArgoCD monitors the repository for manifest changes and automatically synchronizes the state with the Kubernetes cluster.
 
-## Getting Started
+Observability: Integrated monitoring to track pod health and deployment status via the ArgoCD dashboard.
 
-### Prerequisites
+🛡️ Key Features
+Automated Quality Gates: Zero-merge policy if Unit Tests or Linting fails.
 
-- Node.js (v14 or higher)
-- npm or yarn
+Vulnerability Management: Automated container scanning to identify and mitigate CVEs.
 
-### Installation
+High Availability: Deployed on Kubernetes with automated scaling and self-healing pods.
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/devsecops-demo.git
-   cd devsecops-demo
-   ```
+Responsive UI: Fully functional game logic with score tracking and history.
 
-2. Install dependencies:
-   ```bash
-   npm install
-   # or
-   yarn
-   ```
+📸 Project Insights
+CI/CD Workflow
+Successful execution of the multi-stage pipeline, ensuring all security and build checks pass within ~1 minute.
+<img width="1302" height="406" alt="github-actions-pipeline png" src="https://github.com/user-attachments/assets/267a66cf-c272-4416-9187-9bec53ba4267" />
 
-3. Start the development server:
-   ```bash
-   npm run dev
-   # or
-   yarn dev
-   ```
 
-4. Open your browser and navigate to `http://localhost:5173`
+GitOps with ArgoCD
+Real-time visualization of the Kubernetes resource tree, showing healthy synchronization of Services, Deployments, and Ingress.
+<img width="1091" height="616" alt="argocd-deployment-topology png" src="https://github.com/user-attachments/assets/f51a05af-7e0f-4f0d-a91f-27e25ed4bda8" />
 
-## Building for Production
 
-To create a production build:
+Live Application
+The final product is accessible via a LoadBalancer/NodePort, providing a seamless user experience.
+<img width="1336" height="667" alt="application-ui-preview png" src="https://github.com/user-attachments/assets/84fa99a0-8fbb-43d1-830f-3be3ffcde610" />
 
-```bash
-npm run build
-# or
-yarn build
-```
 
-The build artifacts will be stored in the `dist/` directory.
+🚀 How to Run Locally
+
+Frontend Development
+
+Bash
+git clone https://github.com/yourusername/devsecops-demo.git
+cd devsecops-demo
+npm install
+npm run dev
+
+Kubernetes Deployment
+
+Bash
+kubectl apply -f k8s/deployment.yaml
+kubectl apply -f k8s/service.yaml
+
+📈 Future Enhancements
+[ ] Implement Prometheus & Grafana for real-time performance monitoring.
+
+[ ] Integrate SonarQube for deeper static code analysis.
+
+[ ] Add Ingress-Nginx with SSL/TLS termination.
 
