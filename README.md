@@ -56,7 +56,9 @@ The final product is accessible via a LoadBalancer/NodePort, providing a seamles
 Frontend Development
 
 Bash
+
 git clone https://github.com/yourusername/devsecops-demo.git
+
 cd devsecops-demo
 npm install
 npm run dev
