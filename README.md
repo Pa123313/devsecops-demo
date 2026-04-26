@@ -60,13 +60,16 @@ Bash
 git clone https://github.com/yourusername/devsecops-demo.git
 
 cd devsecops-demo
+
 npm install
+
 npm run dev
 
 Kubernetes Deployment
 
 Bash
 kubectl apply -f k8s/deployment.yaml
+
 kubectl apply -f k8s/service.yaml
 
 📈 Future Enhancements
