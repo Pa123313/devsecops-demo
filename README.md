@@ -1,3 +1,6 @@
+🚀 Tic-Tac-Toe: Enterprise-Grade DevSecOps Pipeline
+A classic Tic-Tac-Toe application reimagined as a showcase for modern cloud-native engineering. This project demonstrates a full CI/CD lifecycle, integrating automated security scanning, container orchestration, and GitOps deployment patterns.
+
 <img width="1755" height="634" alt="image" src="https://github.com/user-attachments/assets/f7e65370-fb87-4ab6-9aa2-0d31d6f0fa0c" />
 
 
@@ -23,8 +26,7 @@
 
 
 
-🚀 Tic-Tac-Toe: Enterprise-Grade DevSecOps Pipeline
-A classic Tic-Tac-Toe application reimagined as a showcase for modern cloud-native engineering. This project demonstrates a full CI/CD lifecycle, integrating automated security scanning, container orchestration, and GitOps deployment patterns.
+
 
 🛠️ Tech Stack & DevOps Tooling
 Frontend: React 18, TypeScript, Tailwind CSS.
